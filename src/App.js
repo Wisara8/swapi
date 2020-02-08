@@ -1,12 +1,12 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
+import FilmListItem from './components/FilmListItem'
 
-function App() {
+
+export default function App(props) {
+
   return (
-    <div className="App">
-    </div>
+    <FilmListItem/>
   );
 }
-
-export default App;
 
