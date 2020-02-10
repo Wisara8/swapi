@@ -7,12 +7,13 @@ export default function FilmListItem(props) {
  
   useEffect( () => {
       axios.get("https://swapi.co/api/films/1/").then((response) => {
-        console.log(response.data.title);
+        console.log(response.data);
+        setFilm(response.data.title);
       });
     }
   )
 
   return (
-    <p>hello</p>
+    <p>{film}</p>
   );
 }
