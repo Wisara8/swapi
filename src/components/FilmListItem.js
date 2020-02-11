@@ -1,12 +1,20 @@
 import React, {useState, useEffect} from "react";
-import axios from "axios";
+import { Link } from "react-router-dom";
+
 
 export default function FilmListItem(props) {
+
+  let ID = props.episode;
 
   return (
     <ul>
       <h2>{props.title}</h2>
       <h3>Episode: {props.episode}</h3>
+
+      <Link to='/filmDetail' >
+        <p onClick={props.setFilmID(ID)} >See Detail Page</p>
+      </Link>
+
     </ul>
   );
 }

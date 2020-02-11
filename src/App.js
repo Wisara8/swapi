@@ -26,9 +26,9 @@ export default function App(props) {
           
           setMovie(response.data);
         }).then(() => {
-          console.log("****", movie.characters[0]);
+          // console.log("****", movie.characters[0]);
           const url = movie.characters[0];
-          console.log("url", url);
+          // console.log("url", url);
           axios.get(url).then((res) => {
             // console.log("char", res);
             setCharacters(res.data);
@@ -45,7 +45,7 @@ export default function App(props) {
       <Navbar />
       <Switch>
         <Route exact path='/'>
-          { film ? ( <FilmList props={film} /> ) : ( <Loading />) }
+          { film ? ( <FilmList films={film}   setFilmID={setFilmID} /> ) : ( <Loading />) }
         </Route>
         <Route path='/filmDetail'>
           <FilmDetail  movie={movie} characters={characters} />

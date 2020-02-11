@@ -13,7 +13,7 @@ export default function FilmListItem(props) {
             <h3>{props.movie.title}</h3>
             <p>{props.movie.release_date}</p>
             <p>{props.movie.director}</p>
-            <p>{props.characters.name}</p>
+            { props.characters.name ? ( <p>{props.characters.name}</p>) : ( <Loading />) }
           </div>
       </div>
   );
