@@ -35,7 +35,7 @@ export default function App(props) {
         }
 
         );
-    }
+    },[filmID]
   )
   // console.log("fetching ", film);
 

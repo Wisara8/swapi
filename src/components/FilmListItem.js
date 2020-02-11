@@ -13,6 +13,7 @@ export default function FilmListItem(props) {
 
       <Link to='/filmDetail' >
         <p onClick={props.setFilmID(ID)} >See Detail Page</p>
+        {/* <p onClick={console.log("clicked")} >See Detail Page</p> */}
       </Link>
 
     </ul>
