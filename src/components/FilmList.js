@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import FilmListItem from "../components/FilmListItem.js";
 
 export default function FilmList(props) {
-  console.log("props: ", props);
+  // console.log("props: ", props);
   const films = props.props.map(film => {
     return (
       <FilmListItem

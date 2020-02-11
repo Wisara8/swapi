@@ -4,15 +4,16 @@ import Loading from '../components/Loading';
 
 export default function FilmListItem(props) {
 
-  console.log("props: ", props);
+  // console.log("props: ", props);
 
   return (
       <div>
         <h1>Film Detail Page</h1>
           <div>
-            <h3>{props.props.title}</h3>
-            <p>{props.props.release_date}</p>
-            <p>{props.props.director}</p>
+            <h3>{props.movie.title}</h3>
+            <p>{props.movie.release_date}</p>
+            <p>{props.movie.director}</p>
+            <p>{props.characters.name}</p>
           </div>
       </div>
   );
