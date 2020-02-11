@@ -9,9 +9,10 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
 export default function App(props) {
+  const temp = {characters: "string"};
   const [film, setFilm] = useState(null);
   const [filmID, setFilmID] = useState(1);
-  const [movie, setMovie] = useState("");
+  const [movie, setMovie] = useState(temp);
   const [characters, setCharacters] = useState(null);
 
   useEffect( () => {
@@ -22,6 +23,7 @@ export default function App(props) {
 
         axios.get("https://swapi.co/api/films/"+filmID).then((response) => {  
           // console.log("Movie: ", response.data);
+          
           setMovie(response.data);
         }).then(() => {
           console.log("****", movie.characters[0]);
