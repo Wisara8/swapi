@@ -23,11 +23,10 @@ export default function App(props) {
 
         axios.get("https://swapi.co/api/films/"+filmID).then((response) => {  
           // console.log("Movie: ", response.data);
-          
           setMovie(response.data);
         }).then(() => {
           // console.log("****", movie.characters[0]);
-          const url = movie.characters[0];
+          let url = movie.characters[0];
           // console.log("url", url);
           axios.get(url).then((res) => {
             // console.log("char", res);
