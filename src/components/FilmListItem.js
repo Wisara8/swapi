@@ -12,7 +12,7 @@ export default function FilmListItem(props) {
       <h3>Episode: {props.episode}</h3>
 
       <Link to='/filmDetail' >
-        <p onClick={props.setFilmID(ID)} >See Detail Page</p>
+        <p onClick={() => props.setFilmID(ID)} >See Detail Page</p>
       </Link>
 
     </ul>

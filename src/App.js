@@ -13,7 +13,7 @@ export default function App(props) {
   const [film, setFilm] = useState(null);
   const [filmID, setFilmID] = useState(1);
   const [movie, setMovie] = useState(temp);
-  const [characters, setCharacters] = useState(null);
+  const [characters, setCharacters] = useState([]);
 
   useEffect( () => {
         axios.get("https://swapi.co/api/films").then((response) => {
@@ -32,11 +32,12 @@ export default function App(props) {
           for (const url of urls) {
             axios.get(url).then((res) => {
               // console.log("char", res);
-              chars.push(res.data);
+              chars = res.data;
+            }).then(() => {
+              setCharacters((characters) => [...characters, chars]);
             })
           }
           console.log("chars: ", chars);
-          setCharacters(chars);
         }
         );
     }, [filmID]
