@@ -26,16 +26,20 @@ export default function App(props) {
           setMovie(response.data);
         }).then(() => {
           // console.log("****", movie.characters[0]);
-          let url = movie.characters[0];
-          // console.log("url", url);
-          axios.get(url).then((res) => {
-            // console.log("char", res);
-            setCharacters(res.data);
-          })
+          let urls = movie.characters;
+          console.log("urls", urls);
+          let chars = [];
+          for (const url of urls) {
+            axios.get(url).then((res) => {
+              // console.log("char", res);
+              chars.push(res.data);
+            })
+          }
+          console.log("chars: ", chars);
+          setCharacters(chars);
         }
-
         );
-    }
+    }, [filmID]
   )
   // console.log("fetching ", film);
 
