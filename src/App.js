@@ -15,6 +15,7 @@ export default function App(props) {
   const [filmID, setFilmID] = useState(1);
   const [movie, setMovie] = useState(temp);
   const [characters, setCharacters] = useState([]);
+  const [planets, setPlanets] = useState([]);
   const [charID, setCharID] = useState({});
 
 
@@ -27,16 +28,29 @@ export default function App(props) {
           setMovie(response.data);
         }).then(() => {
           let urls = movie.characters;
-          console.log("urls", urls);
+          console.log("movies: ", movie);
+
+          let urlsPlanets = movie.planets;
+          console.log("planets: ", urlsPlanets);
           let chars = [];
+          let planetoids = [];
+
           for (const url of urls) {
             axios.get(url).then((res) => {
               chars = res.data;
             }).then(() => {
               setCharacters((characters) => [...characters, chars]);
             })
-          }
-          console.log("chars: ", chars);
+          };
+
+          for (const url of urlsPlanets) {
+            axios.get(url).then((res) => {
+              planetoids = res.data;
+            }).then(() => {
+              setPlanets((planets) => [...planets, planetoids]);
+            })
+          };
+
         });
     }, [filmID]
   )
@@ -49,7 +63,7 @@ export default function App(props) {
           { film ? ( <FilmList films={film}   setFilmID={setFilmID} /> ) : ( <Loading />) }
         </Route>
         <Route path='/filmDetail'>
-          <FilmDetail  movie={movie} characters={characters} setCharID={setCharID} />
+          <FilmDetail  movie={movie} characters={characters} planets={planets} setCharID={setCharID} />
         </Route>
         <Route path='/charDetails'>
           <CharDetails charID={charID} />
