@@ -1,14 +1,17 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import Loading from '../components/Loading';
 
 export default function FilmListItem(props) {
 
-  console.log("propsCHARS: ", props.characters);
+  // console.log("propsCHARS: ", props.characters);
   const chars = props.characters.map(char => {
-    console.log("return char: ", char)
+    // console.log("return char: ", char)
     return (
-      <p>{char.name}</p>
+      <Link to='/charDetails' onClick={() => props.setCharID(char)} >
+        <p>{char.name}</p>
+      </Link>
     )
   })
 
