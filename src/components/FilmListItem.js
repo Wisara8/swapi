@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-
 
 export default function FilmListItem(props) {
 
@@ -10,11 +9,9 @@ export default function FilmListItem(props) {
     <ul>
       <h2>{props.title}</h2>
       <h3>Episode: {props.episode}</h3>
-
       <Link to='/filmDetail' onClick={() => props.setFilmID(ID)} >
         <p>See Detail Page</p>
       </Link>
-
     </ul>
   );
 }

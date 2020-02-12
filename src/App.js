@@ -1,4 +1,4 @@
-import React, {useState, useEffect, Fragment} from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import FilmList from './components/FilmList';
 import FilmDetail from './components/FilmDetail';
@@ -20,32 +20,26 @@ export default function App(props) {
 
   useEffect( () => {
         axios.get("https://swapi.co/api/films").then((response) => {
-          // console.log("In App.js: ", response.data.results);
           setFilm(response.data.results);
         });
 
         axios.get("https://swapi.co/api/films/"+filmID).then((response) => {  
-          // console.log("Movie: ", response.data);
           setMovie(response.data);
         }).then(() => {
-          // console.log("****", movie.characters[0]);
           let urls = movie.characters;
           console.log("urls", urls);
           let chars = [];
           for (const url of urls) {
             axios.get(url).then((res) => {
-              // console.log("char", res);
               chars = res.data;
             }).then(() => {
               setCharacters((characters) => [...characters, chars]);
             })
           }
           console.log("chars: ", chars);
-        }
-        );
+        });
     }, [filmID]
   )
-  // console.log("fetching ", film);
 
   return (
     <Router>
@@ -62,7 +56,6 @@ export default function App(props) {
         </Route>
       </Switch>
     </Router>
-
   );
 }
 
