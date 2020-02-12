@@ -21,22 +21,24 @@ export default function App(props) {
   useEffect( () => {
         axios.get("https://swapi.co/api/films").then((response) => {
           setFilm(response.data.results);
+        }).catch(error => {
+          console.log("error response: ", error.response);
         });
 
         axios.get("https://swapi.co/api/films/"+filmID).then((response) => {  
           setMovie(response.data);
         }).then(() => {
           let urls = movie.characters;
-          console.log("urls", urls);
           let chars = [];
           for (const url of urls) {
             axios.get(url).then((res) => {
               chars = res.data;
             }).then(() => {
               setCharacters((characters) => [...characters, chars]);
+            }).catch(error => {
+              console.log("error response: ", error.response);
             })
           }
-          console.log("chars: ", chars);
         });
     }, [filmID]
   )
