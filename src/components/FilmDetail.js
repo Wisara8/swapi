@@ -4,7 +4,13 @@ import Loading from '../components/Loading';
 
 export default function FilmListItem(props) {
 
-  // console.log("props: ", props);
+  console.log("propsCHARS: ", props.characters);
+  const chars = props.characters.map(char => {
+    console.log("return char: ", char)
+    return (
+      <p>{char.name}</p>
+    )
+  })
 
   return (
       <div>
@@ -13,7 +19,7 @@ export default function FilmListItem(props) {
             <h3>{props.movie.title}</h3>
             <p>{props.movie.release_date}</p>
             <p>{props.movie.director}</p>
-            { props.characters.name ? ( <p>{props.characters.name}</p>) : ( <Loading />) }
+            { props.characters[0] ? ( chars ) : ( <Loading />) }
           </div>
       </div>
   );

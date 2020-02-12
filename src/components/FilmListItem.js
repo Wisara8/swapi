@@ -11,9 +11,8 @@ export default function FilmListItem(props) {
       <h2>{props.title}</h2>
       <h3>Episode: {props.episode}</h3>
 
-      <Link to='/filmDetail' onClick={() => {props.setFilmID(ID)}} >
-        <p >See Detail Page</p>
-        {/* <p onClick={console.log("clicked")} >See Detail Page</p> */}
+      <Link to='/filmDetail' >
+        <p onClick={() => props.setFilmID(ID)} >See Detail Page</p>
       </Link>
 
     </ul>
