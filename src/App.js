@@ -14,6 +14,8 @@ export default function App(props) {
   const [filmURL, setFilmURL] = useState(1);
   const [movie, setMovie] = useState({});
   const [characters, setCharacters] = useState([]);
+  const [planets, setPlanets] = useState([]);
+  const [starships, setStarships] = useState([]);
   const [charID, setCharID] = useState({});
 
 
@@ -28,13 +30,40 @@ export default function App(props) {
       .then((response) => {
         setMovie(response.data);
         const urls = response.data.characters;
+        const planetUrls = response.data.planets;
+        const starshipUrls = response.data.starships;
+
         setCharacters([]);
+        setPlanets([]);
+        setStarships([]);
 
         urls.forEach(characterURL => {
           axios.get(characterURL)
             .then((res) => {
               const chars = res.data;
               setCharacters((characters) => [...characters, chars]);
+            })
+            .catch(error => {
+              console.log("error response: ", error.response);
+            })
+        });
+
+        planetUrls.forEach(planetURL => {
+          axios.get(planetURL)
+            .then((res) => {
+              const planetoid = res.data;
+              setPlanets((planets) => [...planets, planetoid]);
+            })
+            .catch(error => {
+              console.log("error response: ", error.response);
+            })
+        });
+
+        starshipUrls.forEach(starshipURL => {
+          axios.get(starshipURL)
+            .then((res) => {
+              const ship = res.data;
+              setStarships((starships) => [...starships, ship]);
             })
             .catch(error => {
               console.log("error response: ", error.response);
@@ -53,7 +82,7 @@ export default function App(props) {
           {film ? (<FilmList films={film} setFilmURL={setFilmURL} />) : (<Loading />)}
         </Route>
         <Route path='/filmDetail'>
-          <FilmDetail movie={movie} characters={characters} setCharID={setCharID} />
+          <FilmDetail movie={movie} starships={starships} planets={planets} characters={characters} setCharID={setCharID} />
         </Route>
         <Route path='/charDetails'>
           <CharDetails charID={charID} />
