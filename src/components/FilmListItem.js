@@ -2,14 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function FilmListItem(props) {
-
-  let ID = props.episode;
+  const { episode, title, url, setFilmURL } = props;
 
   return (
     <ul>
-      <h2>{props.title}</h2>
-      <h3>Episode: {props.episode}</h3>
-      <Link to='/filmDetail' onClick={() => props.setFilmID(ID)} >
+      <h2>{title}</h2>
+      <h3>Episode: {episode}</h3>
+      <Link to='/filmDetail' onClick={() => setFilmURL(url)} >
         <p>See Detail Page</p>
       </Link>
     </ul>
