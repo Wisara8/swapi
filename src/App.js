@@ -10,10 +10,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 export default function App(props) {
-  const temp = { characters: "string" };
   const [film, setFilm] = useState(null);
   const [filmURL, setFilmURL] = useState(1);
-  const [movie, setMovie] = useState(temp);
+  const [movie, setMovie] = useState({});
   const [characters, setCharacters] = useState([]);
   const [charID, setCharID] = useState({});
 
