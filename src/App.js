@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
 import FilmList from './components/FilmList';
 import FilmDetail from './components/FilmDetail';
 import Loading from './components/Loading';
