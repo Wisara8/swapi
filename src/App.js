@@ -21,9 +21,12 @@ export default function App(props) {
   useEffect(() => {
     axios.get("https://swapi.co/api/films").then((response) => {
       setFilm(response.data.results);
-    }).catch(error => {
-      console.log("error response: ", error.response);
-    });
+    })
+      .catch((error) => {
+        console.log(error.response.status);
+        console.log(error.response.headers);
+        console.log(error.response.data);
+      });
 
     axios.get(filmURL)
       .then((response) => {
@@ -42,9 +45,11 @@ export default function App(props) {
               const chars = res.data;
               setCharacters((characters) => [...characters, chars]);
             })
-            .catch(error => {
-              console.log("error response: ", error.response);
-            })
+            .catch((error) => {
+              console.log(error.response.status);
+              console.log(error.response.headers);
+              console.log(error.response.data);
+            });
         });
 
         planetUrls.forEach(planetURL => {
@@ -53,9 +58,11 @@ export default function App(props) {
               const planetoid = res.data;
               setPlanets((planets) => [...planets, planetoid]);
             })
-            .catch(error => {
-              console.log("error response: ", error.response);
-            })
+            .catch((error) => {
+              console.log(error.response.status);
+              console.log(error.response.headers);
+              console.log(error.response.data);
+            });
         });
 
         starshipUrls.forEach(starshipURL => {
@@ -64,9 +71,11 @@ export default function App(props) {
               const ship = res.data;
               setStarships((starships) => [...starships, ship]);
             })
-            .catch(error => {
-              console.log("error response: ", error.response);
-            })
+            .catch((error) => {
+              console.log(error.response.status);
+              console.log(error.response.headers);
+              console.log(error.response.data);
+            });
         });
 
       });
