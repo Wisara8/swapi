@@ -77,7 +77,6 @@ export default function App(props) {
               console.log(error.response.data);
             });
         });
-
       });
   }, [filmURL]
   )

@@ -5,7 +5,6 @@ import Loading from '../components/Loading';
 export default function FilmListItem(props) {
 
   const { movie, characters, setCharID, planets, starships } = props;
-
   const chars = characters.map(char => {
     return (
       <Link to='/charDetails' onClick={() => setCharID(char)} >
@@ -44,3 +43,4 @@ export default function FilmListItem(props) {
     </div>
   );
 }
+
