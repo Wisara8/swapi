@@ -19,7 +19,7 @@ export default function App(props) {
 
 
   useEffect(() => {
-    axios.get("https://swapi.co/api/films").then((response) => {
+    axios.get("https://swapi.dev/api/films").then((response) => {
       setFilm(response.data.results);
     })
       .catch((error) => {
