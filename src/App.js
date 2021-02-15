@@ -6,7 +6,11 @@ import Navbar from './components/Navbar';
 import CharDetails from './components/CharDetails';
 import axios from "axios";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
+// fix persist data
+// add style
+// add favicon to browser tab
+// search bar
+// deploy app
 
 export default function App(props) {
   const [film, setFilm] = useState(null);
