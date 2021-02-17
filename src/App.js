@@ -21,7 +21,6 @@ export default function App(props) {
   const [starships, setStarships] = useState([]);
   const [charID, setCharID] = useState({});
 
-
   useEffect(() => {
     axios.get("https://swapi.dev/api/films").then((response) => {
       setFilm(response.data.results);

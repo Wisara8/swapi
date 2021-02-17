@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function FilmListItem(props) {
   const { episode, title, url, setFilmURL } = props;
-
+  console.log("here", url);
   return (
     <ul>
       <h2>{title}</h2>
