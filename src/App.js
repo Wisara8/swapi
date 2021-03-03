@@ -94,7 +94,7 @@ export default function App(props) {
         <Route path='/filmDetail'>
           <FilmDetail movie={movie} starships={starships} planets={planets} characters={characters} setCharID={setCharID} />
         </Route>
-        <Route path='/charDetails'>
+        <Route path='/charDetails/:id'>
           <CharDetails charID={charID} />
         </Route>
       </Switch>
