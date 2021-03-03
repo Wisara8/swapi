@@ -10,7 +10,6 @@ import './css/App.css';
 // import { Menu, Container } from "semantic-ui-react";
 import 'semantic-ui-css/semantic.min.css';
 
-
 // fix persist data - local storage or redux
 // add style
 // add favicon to browser tab - done
@@ -94,6 +93,7 @@ export default function App(props) {
       <Navbar />
       <Switch>
         <Route exact path='/'>
+          <h1>Film List</h1>
           {film ? (<FilmList films={film} setFilmURL={setFilmURL} />) : (<Loading />)}
         </Route>
         <Route path='/filmDetail'>
