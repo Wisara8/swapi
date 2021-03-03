@@ -1,19 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Menu, Container } from "semantic-ui-react";
+
 
 export default function Navbar(props) {
 
-
   return (
-    <div>
+    <Menu>
       <Link to='/'>
-        <p>Film List</p>
+        <Menu.Item>Film List</Menu.Item>
       </Link>
-
       <Link to='/filmDetail'>
-        <p>Film Detail</p>
+        <Menu.Item>Film Detail</Menu.Item>
       </Link>
 
-    </div>
+    </Menu>
   );
 }
+
