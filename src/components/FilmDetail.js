@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Loading from '../components/Loading';
 
 export default function FilmListItem(props) {
@@ -26,11 +26,12 @@ export default function FilmListItem(props) {
       <p>{starship.name}</p>
     )
   });
-
+  let { id } = useParams();
   return (
     <div>
       <h1>Film Detail Page</h1>
       <div>
+        <p>{id}</p>
         <h3>{movie.title}</h3>
         <p>Release Date: {movie.release_date}</p>
         <p>Directed By: {movie.director}</p>
@@ -45,4 +46,3 @@ export default function FilmListItem(props) {
     </div>
   );
 }
-

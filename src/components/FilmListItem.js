@@ -7,7 +7,7 @@ export default function FilmListItem(props) {
   const { episode, title, url, setFilmURL } = props;
   console.log("here", url);
   return (
-    <Link to='/filmDetail' onClick={() => setFilmURL(url)} >
+    <Link to={`/filmDetail/${episode}`} onClick={() => setFilmURL(url)} >
       <Card>
         <Card.Content>
           <Card.Header>{title}</Card.Header>
