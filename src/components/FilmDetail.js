@@ -27,6 +27,7 @@ export default function FilmListItem(props) {
     )
   });
   let { id } = useParams();
+  console.log(id);
   return (
     <div>
       <h1>Film Detail Page</h1>
