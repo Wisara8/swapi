@@ -27,6 +27,7 @@ export default function FilmListItem(props) {
     )
   });
   let { id } = useParams();
+  // consolelog id, then trigger a reload
   console.log(id);
   return (
     <div>
