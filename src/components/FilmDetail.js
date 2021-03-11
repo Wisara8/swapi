@@ -8,8 +8,7 @@ export default function FilmListItem(props) {
   const chars = characters.map(char => {
     return (
 
-      <Link to={`/charDetails/${char.name}`} onClick={() => setCharID(char)
-      } >
+      <Link to={`/charDetails/${char.name}`} onClick={() => setCharID(char)} >
         <p>{char.name}</p>
       </Link >
     )
@@ -28,12 +27,14 @@ export default function FilmListItem(props) {
   });
   let { id } = useParams();
   // consolelog id, then trigger a reload
-  console.log(id);
+  // console.log("id", id);
+
   return (
     <div>
       <h1>Film Detail Page</h1>
       <div>
         <p>{id}</p>
+        {console.log("Hello there")}
         <h3>{movie.title}</h3>
         <p>Release Date: {movie.release_date}</p>
         <p>Directed By: {movie.director}</p>
