@@ -10,7 +10,7 @@ import './css/App.css';
 // import { Menu, Container } from "semantic-ui-react";
 import 'semantic-ui-css/semantic.min.css';
 
-// fix persist data - local storage or redux
+// fix persist data - Done
 // add style much improved
 // add favicon to browser tab - done
 // search bar
@@ -97,7 +97,7 @@ export default function App(props) {
           {film ? (<FilmList films={film} setFilmURL={setFilmURL} />) : (<Loading />)}
         </Route>
         <Route path='/filmDetail/:id'>
-          <FilmDetail movie={movie} starships={starships} planets={planets} characters={characters} setCharID={setCharID} />
+          <FilmDetail movie={movie} starships={starships} planets={planets} characters={characters} setCharID={setCharID} setFilmURL={setFilmURL} />
         </Route>
         <Route path='/charDetails/:id'>
           <CharDetails charID={charID} />

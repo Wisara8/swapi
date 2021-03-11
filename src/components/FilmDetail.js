@@ -4,7 +4,19 @@ import Loading from '../components/Loading';
 
 export default function FilmListItem(props) {
 
-  const { movie, characters, setCharID, planets, starships } = props;
+  console.log(props);
+  const { movie, characters, setCharID, planets, starships, setFilmURL } = props;
+  let { id } = useParams();
+
+  if (!movie.title) {
+    if (id > 3) {
+      id = id - 3;
+    } else {
+      id = +id + 3;
+    }
+    setFilmURL(`http://swapi.dev/api/films/${id}/`);
+  }
+
   const chars = characters.map(char => {
     return (
 
@@ -25,9 +37,6 @@ export default function FilmListItem(props) {
       <p>{starship.name}</p>
     )
   });
-  let { id } = useParams();
-  // consolelog id, then trigger a reload
-  // console.log("id", id);
 
   return (
     <div>
