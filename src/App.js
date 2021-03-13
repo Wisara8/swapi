@@ -7,14 +7,7 @@ import CharDetails from './components/CharDetails';
 import axios from "axios";
 import { BrowserRouter as Router, Switch, Route, } from 'react-router-dom';
 import './css/App.css';
-// import { Menu, Container } from "semantic-ui-react";
 import 'semantic-ui-css/semantic.min.css';
-
-// fix persist data - Done
-// add style much improved
-// add favicon to browser tab - done
-// search bar
-// deploy app
 
 export default function App(props) {
   const [film, setFilm] = useState(null);

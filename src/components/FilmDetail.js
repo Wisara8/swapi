@@ -7,7 +7,7 @@ export default function FilmListItem(props) {
   console.log(props);
   const { movie, characters, setCharID, planets, starships, setFilmURL } = props;
   let { id } = useParams();
-
+  // The episode id and episode # do not match on the API end.
   if (!movie.title) {
     if (id > 3) {
       id = id - 3;
