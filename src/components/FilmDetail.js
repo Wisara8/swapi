@@ -20,7 +20,7 @@ export default function FilmListItem(props) {
   const chars = characters.map(char => {
     return (
 
-      <Link to={`/charDetails/${char.name}`} onClick={() => setCharID(char)} >
+      <Link to={`/charDetail/${id}/${char.name}`} onClick={() => setCharID(char)} >
         <p>{char.name}</p>
       </Link >
     )
