@@ -6,10 +6,6 @@ export default function CharDetails(props) {
   const { charID } = props;
   let { id, charName } = useParams();
 
-  if (!charID.name) {
-    // call setChar
-  }
-
   console.log("params", id, charName);
   return (
     <div>
